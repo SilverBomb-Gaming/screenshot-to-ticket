@@ -4,11 +4,7 @@
 
 The default model path is a vision model on a local [Ollama](https://ollama.com) server. No API key is required for that path. An OpenAI-compatible vision endpoint is opt-in, and the screenshot is sent to whatever host you configure.
 
-## In the owner's words
-
-I wanted a private scratchpad that turns a screenshot into a ticket draft I can edit before anything gets filed.
-
-## What it does
+Honestly, I wanted a private scratchpad that turns a screenshot into a ticket draft I can edit before anything gets filed.
 
 You point the CLI at a PNG, JPEG, or WebP screenshot of a failure. The tool checks the file, sends it to a vision model with a fixed prompt, and turns the model's JSON into a ticket draft:
 
@@ -23,13 +19,11 @@ You point the CLI at a PNG, JPEG, or WebP screenshot of a failure. The tool chec
 
 Markdown headings are rendered locally, so the file shape does not depend on the model inventing a template.
 
-## Why local-first
-
 Screenshots pick up customer data, session tokens, internal URLs, and unreleased UI. The default path sends the image only to Ollama on your machine (`http://127.0.0.1:11434`). The tool never posts to Jira, GitHub Issues, or any other tracker. You get a draft on stdout or in a file you choose.
 
 If you set the OpenAI-compatible provider, that choice sends the image to the host in `SHOT_TICKET_BASE_URL`. That is off unless you turn it on.
 
-## Install
+How to install
 
 From a clone of this repository (the sample images live here, not in a wheel):
 
